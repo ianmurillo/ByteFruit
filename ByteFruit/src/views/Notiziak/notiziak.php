@@ -50,16 +50,10 @@
     <center><h2>Berri informatikoak</h2></center>
     <center>
     <?php     
-    $servername = "localhost";     
-    $username = "newlife";     
-    $password = "@Newlifeioi1";     
-    $dbname = "newlife";     
-    
-    $conn = new mysqli($servername, $username, $password, $dbname);     
-    if ($conn->connect_error) 
-    {         
-        die("Errorea: " . $conn->connect_error);     
-    }     
+    require_once("../../functions/functions.php");
+                
+    $conn = null;
+    $conn = connect($conn);    
     
     $dateFilterFrom = isset($_GET['dateFrom']) ? $_GET['dateFrom'] : '';
     $dateFilterTo = isset($_GET['dateTo']) ? $_GET['dateTo'] : '';

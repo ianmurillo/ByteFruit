@@ -16,21 +16,10 @@
         <img width="120" height="100" src="../../../public/logo.png"/>
     </div>
     </header>
-    <div class="navbar">
-        
-        <a href="../Hasiera/index.html">Hasiera</a>
-        <a href="../GureInformazia/OurInfo.html">Gure Informazioa</a>
-        <a href="katalogoa.php">Katalogoa</a>
-        <a href="../Notiziak/notiziak.php">Notiziak</a>
-        <a href="../Hornitzaileak/hornitzaileak.php">Hornitzaileak</a>
-        
-        
-        <div class="navbar-right">
-        <a href="../Login/login.php">Saioa hasi</a>
-            <a href="../Erregistratu/registratu.html">Erregistratu</a>
-        </div>
-            
-    </div>
+    
+    <?php
+    require_once("../../functions/functions.php");
+    ?>
 
     <div class="search-form">
             <input aria-label="Bilatu" id="search-input" placeholder="Bilatu produktua..." class="search-input" value="">
@@ -93,16 +82,10 @@
     <center><h2>Gure almazenaren katalogoa</h2></center>
     <center>
     <?php
-    $servername = "localhost";
-    $username = "newlife";
-    $password = "@Newlifeioi1";
-    $dbname = "newlife";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Errorea: " . $conn->connect_error);
-    }
+    require_once("../../functions/functions.php");
+                
+    $conn = null;
+    $conn = connect($conn);
 
     $categoryFilter = isset($_GET['category']) ? $_GET['category'] : 'all';
     $brandFilter = isset($_GET['brand']) ? $_GET['brand'] : '';

@@ -66,16 +66,10 @@
 <?php
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $servername = "localhost";
-        $username = "newlife";
-        $password = "@Newlifeioi1";
-        $dbname = "newlife";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        if ($conn->connect_error) {
-            die("Errorea datu-basearekin konexioan: " . $conn->connect_error);
-        }
+        require_once("../../functions/functions.php");
+                
+        $conn = null;
+        $conn = connect($conn);
 
         $telefonoa = $_POST["TelZenbakia"];
         $izena = $_POST["Izena"];
