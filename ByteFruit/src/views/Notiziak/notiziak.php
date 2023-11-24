@@ -1,31 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>newlife</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NewLife</title>
-    <link rel="icon" href="../../../public/logo.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css">
-</head>
-<body>
-    <header>
-        <div>
-            <h1>NewLife</h1>
-            <img width="120" height="100" src="../../../public/logo.png"/>
-        </div>
-    </header>
-    <div class="navbar">
-        <a href="../Hasiera/index.html">Hasiera</a>
-        <a href="../GureInformazia/OurInfo.html">Gure Informazioa</a>
-        <a href="../Katalogo/katalogoa.php">Katalogoa</a>
-        <a href="notiziak.php">Notiziak</a>
-        <a href="../Hornitzaileak/Hornitzaileak.php">Hornitzaileak</a>
-        <div class="navbar-right">
-            <a href="../Login/login.php">Saioa hasi</a>
-            <a href="../Erregistratu/registratu.html">Erregistratu</a>
-        </div>
-    </div>
+    
+    <?php
+    require_once("../../require/header.php");
+    ?>
+
     <div class="filter-section">
         <form method="GET">
             <label for="dateFilterFrom">Hasierako data:</label>
@@ -50,7 +29,7 @@
     <center><h2>Berri informatikoak</h2></center>
     <center>
     <?php     
-    require_once("../../functions/functions.php");
+    require_once("../../require/functions.php");
                 
     $conn = null;
     $conn = connect($conn);    
@@ -91,10 +70,9 @@
     $conn->close();     
     ?>
     </center>
-    </body>
-    <footer>
-        <div class="footer">
-            <p>&copy; 2023 Newlife - Eskubide guztiak erreserbatuta</p>
-        </div>
-    </footer>
+    
+    <?php
+    require_once("../../require/footer.php");
+    ?>
+
 </html>

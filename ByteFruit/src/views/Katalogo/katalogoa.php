@@ -1,24 +1,8 @@
 <!DOCTYPE html>
 <html lang="eus">
-<head>
- 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>NewLife</title>
-        <link rel="icon" href="../../../public/logo.png" type="image/png">
-        <link rel="stylesheet" type="text/css" href="../../css/style.css">
-
-    </head>
-    <body>
-    <header>
-        <div>
-        <h1>NewLife</h1>
-        <img width="120" height="100" src="../../../public/logo.png"/>
-    </div>
-    </header>
     
     <?php
-    require_once("../../functions/functions.php");
+    require_once("../../require/header.php");
     ?>
 
     <div class="search-form">
@@ -82,7 +66,7 @@
     <center><h2>Gure almazenaren katalogoa</h2></center>
     <center>
     <?php
-    require_once("../../functions/functions.php");
+    require_once("../../require/functions.php");
                 
     $conn = null;
     $conn = connect($conn);
@@ -130,11 +114,10 @@
     $conn->close();
     ?>
     </center>
-    </body>
-    <footer>
-        <div class="footer">
-            <p>&copy; 2023 Newlife - Eskubide guztiak erreserbatuta</p>
-        </div>
-    </footer>
+    
+    <?php
+    require_once("../../require/footer.php");
+    ?>
+
 </html>
 
