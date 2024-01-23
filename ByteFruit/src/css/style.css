@@ -567,7 +567,7 @@ body {
       border: none;
       padding: 8px 12px;
       cursor: pointer;
-      font-size: 14px; 
+      font-size: 14px;
     }
 
     #favorites-list {
@@ -602,12 +602,3 @@ body {
       border: none;
       background: none;
     }
-    
-    .add-to-car {
-        background-color: #e44d26;
-        color: #fff;
-        border: none;
-        padding: 8px 12px;
-        cursor: pointer;
-        font-size: 14px;
-      }

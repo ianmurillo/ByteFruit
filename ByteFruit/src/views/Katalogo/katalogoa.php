@@ -105,10 +105,7 @@
                 <p>" . $row["modeloa"] . "</p>
                 <p style='color: red;'>" . $row["prezioaS"] . "€</p>
                 <p>" . $row["balorazioa"] . "⭐</p>
-                <div>
-                <button class='add-to-car' onclick=\"addToCar('" . $row["izena"] . "')\">Añadir al carrito  </button>
                 <button class='add-to-favorites' onclick=\"addToFavorites('" . $row["izena"] . "')\">♡</button>
-                </div>
                 </div>";         
             }   
     } else {
