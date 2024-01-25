@@ -7,6 +7,12 @@
     <title>ByteFruit</title>
     <link rel="icon" href="../../../public/logo.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <!-- CSS de Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery y JS de Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -24,18 +30,18 @@
         <div id="favorites-list">
             <h2>Lista de Favoritos</h2>
             <ul id="favorites">
-            <!-- La lista de favoritos se mostrará aquí -->
             </ul>
         </div>
 
-        <div id="cart-container">
-            <button id="toggle-cart">🛒</button>
-            <div id="cart">
-                <h2>Cesta</h2>
-                <ul id="cart-items"></ul>
-                <p>Total: $<span id="cart-total">0</span></p>
-                <button id="checkout-btn">Realizar Compra</button>
-            </div>
+        <button id="cart-sidebar-btn" class="btn btn-primary">🛒</button>
+
+        <div id="cart-sidebar" class="offcanvas offcanvas-end">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas">Cerrar</button>
+            <h2>Carrito de Compras</h2>
+            <ul id="cart-items-sidebar" class="list-group"></ul>
+            <p id="cart-total-sidebar">Total: $0.00</p>
+            <button id="checkout-btn-sidebar" class="btn btn-success mt-3">Realizar Compra</button>
+            <button id="clear-cart-btn-sidebar" class="btn btn-danger mt-3">Vaciar Carrito</button>
         </div>
 
     </header>
@@ -55,7 +61,7 @@
         </div>
     </div>
 
-    <script src="../../js/main.js"></script>
+    <script src="../js/main.js"></script>
 
 </body>
 
