@@ -241,16 +241,11 @@ main {
 .btn {
     display: inline-block;
     padding: 15px 20px;
-    background-color: #ff4081;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #ff4081;
 }
 
 /* Estilos de las ofertas destacadas */
@@ -319,7 +314,7 @@ main {
 
 .container .btn-menu {
     float: left;
-    line-height: 60px;
+    line-height: 50px;
 }
 
 .container .btn-menu label {
@@ -426,7 +421,7 @@ main {
 /* Estilos del logo */
 .logo {
     border-radius: 20%;
-    margin: 0px auto 0;
+    margin: 8px auto 0;
     height: 80px;
     width: 150px;
 }
@@ -479,6 +474,7 @@ main {
 
 #cart h2 {
     text-align: center;
+    color: #000000;
 }
 
 ul {
@@ -491,16 +487,12 @@ li {
 }
 
 button {
-    background-color: #ffffff;
+    background-color: #000000;
     color: #fff;
     border: none;
     padding: 8px 12px;
     cursor: pointer;
     border-radius: 8px;
-}
-
-button:hover {
-    background-color: #ff4081;
 }
 
 /* FAVORITOS*/
@@ -743,7 +735,7 @@ body {
 
 
 #cart-sidebar-btn {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
     border: none;
@@ -752,7 +744,6 @@ body {
     cursor: pointer;
     border-radius: 5px;
     transition: opacity 0.3s ease-in-out; /* Agregamos una transición de opacidad */
-    background-color: rgba(0, 0, 0, 0.1);
 }
 
 #cart-sidebar-btn.hidden {
@@ -823,4 +814,22 @@ body {
 #cart-sidebar-btn.hidden {
     opacity: 0;
     pointer-events: none; /* Desactivamos los eventos para el botón oculto */
+}
+
+.btn-close {
+    display: flex;
+}
+
+#carrito {
+    color: #000000;
+    font-size: 22px;
+}
+
+#produktua {
+    color: #000000;
+    font-size: 14px;
+}
+
+#checkout-btn-sidebar {
+    border:none;
 }

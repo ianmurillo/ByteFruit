@@ -106,7 +106,7 @@
                 <p style='color: red;'>" . $row["prezioaS"] . "€</p>
                 <p>" . $row["balorazioa"] . "⭐</p>
                 <div>
-                <button class='add-to-cart' data-name='" . $row["Irudia"] . "' data-price='" . $row["prezioaS"] . "'>Añadir al carrito</button>
+                <button class='add-to-cart' data-name='" . $row["izena"] . "' data-marka='" . $row["marka"] . "' data-modeloa='" . $row["modeloa"] . "'  data-price='" . $row["prezioaS"] . "'>Añadir al carrito</button>
                 <button class='add-to-favorites' onclick=\"addToFavorites('" . $row["izena"] . "')\">♡</button>
                 </div>
                 </div>";         
@@ -123,7 +123,6 @@
     require_once("../../require/footer.php");
     ?>
 
-    <script src="../../js/main.js"></script>
 
 </html>
 
