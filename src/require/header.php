@@ -7,7 +7,6 @@
     <title>ByteFruit</title>
     <link rel="icon" href="../../../public/logo.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
-    <!-- CSS de Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>

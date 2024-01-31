@@ -40,6 +40,12 @@ function removeFromFavorites(button) {
             clearCartBtn: document.getElementById('clear-cart-btn-sidebar'),
         };
     
+        // Recuperar datos del carrito desde el almacenamiento local al cargar la página
+        if (localStorage.getItem('cart')) {
+            cart.items = JSON.parse(localStorage.getItem('cart'));
+            updateCartUI();
+        }
+    
         cart.btn.addEventListener('click', toggleCartSidebar);
         cart.closeBtn.addEventListener('click', toggleCartSidebar);
         document.addEventListener('click', handleClickEvents);
@@ -69,12 +75,20 @@ function removeFromFavorites(button) {
             const { name, marka, modeloa, price } = target.dataset;
             const existingItem = cart.items.find(item => item.name === name && item.marka === marka && item.modeloa === modeloa);
             existingItem ? existingItem.quantity++ : cart.items.push({ name, marka, modeloa, price: parseFloat(price), quantity: 1 });
+    
+            // Actualizar el almacenamiento local con los nuevos datos del carrito
+            localStorage.setItem('cart', JSON.stringify(cart.items));
+    
             updateCartUI();
         }
     
         function removeProductFromCart(target) {
             const indexToRemove = parseInt(target.dataset.index);
             cart.items.splice(indexToRemove, 1);
+    
+            // Actualizar el almacenamiento local con los nuevos datos del carrito
+            localStorage.setItem('cart', JSON.stringify(cart.items));
+    
             updateCartUI();
         }
     
@@ -83,11 +97,19 @@ function removeFromFavorites(button) {
             const delta = target.classList.contains('increase') ? 1 : -1;
             cart.items[indexToUpdate].quantity += delta;
             if (cart.items[indexToUpdate].quantity < 1) cart.items[indexToUpdate].quantity = 1;
+    
+            // Actualizar el almacenamiento local con los nuevos datos del carrito
+            localStorage.setItem('cart', JSON.stringify(cart.items));
+    
             updateCartUI();
         }
     
         function clearCart() {
             cart.items.length = 0;
+    
+            // Borrar los datos del carrito del almacenamiento local al limpiar el carrito
+            localStorage.removeItem('cart');
+    
             updateCartUI();
         }
     
@@ -107,6 +129,7 @@ function removeFromFavorites(button) {
             return cart.items.reduce((total, item) => total + item.price * item.quantity, 0);
         }
     });
+    
     
     
     /*TRADUCTOR*/
