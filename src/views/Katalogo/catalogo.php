@@ -6,8 +6,8 @@
     ?>
 
     <div class="search-form">
-            <input aria-label="Bilatu" id="search-input" placeholder="Bilatu produktua..." class="search-input" value="">
-            <button aria-label="Search" type="submit" class="search-button" id="search-button">Bilatu</button>
+            <input aria-label="Bilatu" id="search-input" placeholder="Buscar producto..." class="search-input" value="">
+            <button aria-label="Search" type="submit" class="search-button" id="search-button">Buscar</button>
     </div>
 
     <script>
@@ -29,29 +29,29 @@
 
     <div class="filter-section">
         <form method="GET">
-            <label for="categoryFilter">Kategoria:</label>
+            <label for="categoryFilter">Categoria:</label>
             <select id="categoryFilter" name="category">
-                <option value="all" <?php if (isset($_GET['category']) && $_GET['category'] === 'Dena') echo 'selected="selected"'; ?>>Dena</option>
-                <option value="Prozesadorea" <?php if (isset($_GET['category']) && $_GET['category'] === 'Prozesadorea') echo 'selected="selected"'; ?>>Prozesadoreak</option>
-                <option value="Txartel Grafikoa" <?php if (isset($_GET['category']) && $_GET['category'] === 'Txartel Grafikoa') echo 'selected="selected"'; ?>>Txartel Grafikoak</option>
-                <option value="Plaka Basea" <?php if (isset($_GET['category']) && $_GET['category'] === 'Plaka Basea') echo 'selected="selected"'; ?>>Plaka Baseak</option>
-                <option value="Disko Gogorra" <?php if (isset($_GET['category']) && $_GET['category'] === 'Disko Gogorra') echo 'selected="selected"'; ?>>Disko Gogorrak</option>
-                <option value="Ram Memoria" <?php if (isset($_GET['category']) && $_GET['category'] === 'Ram Memoria') echo 'selected="selected"'; ?>>Ram Memoriak</option>
-                <option value="Sagua" <?php if (isset($_GET['category']) && $_GET['category'] === 'Sagua') echo 'selected="selected"'; ?>>Saguak</option>
-                <option value="Aurikularrak" <?php if (isset($_GET['category']) && $_GET['category'] === 'Aurikularrak') echo 'selected="selected"'; ?>>Aurikularrak</option>
-                <option value="Teklatua" <?php if (isset($_GET['category']) && $_GET['category'] === 'Teklatua') echo 'selected="selected"'; ?>>Teklatuak</option>
-                <option value="Pantaila" <?php if (isset($_GET['category']) && $_GET['category'] === 'Pantaila') echo 'selected="selected"'; ?>>Pantailak</option>
-                <option value="Portatila" <?php if (isset($_GET['category']) && $_GET['category'] === 'Portatila') echo 'selected="selected"'; ?>>Portatilak</option>
+                <option value="all" <?php if (isset($_GET['category']) && $_GET['category'] === 'Dena') echo 'selected="selected"'; ?>>Todo</option>
+                <option value="Prozesadorea" <?php if (isset($_GET['category']) && $_GET['category'] === 'Prozesadorea') echo 'selected="selected"'; ?>>Procesadores</option>
+                <option value="Txartel Grafikoa" <?php if (isset($_GET['category']) && $_GET['category'] === 'Txartel Grafikoa') echo 'selected="selected"'; ?>>Tarjetas Graficas</option>
+                <option value="Plaka Basea" <?php if (isset($_GET['category']) && $_GET['category'] === 'Plaka Basea') echo 'selected="selected"'; ?>>Placas base</option>
+                <option value="Disko Gogorra" <?php if (isset($_GET['category']) && $_GET['category'] === 'Disko Gogorra') echo 'selected="selected"'; ?>>Disco Duros</option>
+                <option value="Ram Memoria" <?php if (isset($_GET['category']) && $_GET['category'] === 'Ram Memoria') echo 'selected="selected"'; ?>>Memorias RAM</option>
+                <option value="Sagua" <?php if (isset($_GET['category']) && $_GET['category'] === 'Sagua') echo 'selected="selected"'; ?>>Ratones</option>
+                <option value="Aurikularrak" <?php if (isset($_GET['category']) && $_GET['category'] === 'Aurikularrak') echo 'selected="selected"'; ?>>Auriculares</option>
+                <option value="Teklatua" <?php if (isset($_GET['category']) && $_GET['category'] === 'Teklatua') echo 'selected="selected"'; ?>>Teclados</option>
+                <option value="Pantaila" <?php if (isset($_GET['category']) && $_GET['category'] === 'Pantaila') echo 'selected="selected"'; ?>>Pantallas</option>
+                <option value="Portatila" <?php if (isset($_GET['category']) && $_GET['category'] === 'Portatila') echo 'selected="selected"'; ?>>Portatiles</option>
             </select>
-            <label for="brandFilter">Marka:</label>
-            <input type="textarea" id="brandFilter" name="brand" placeholder="idatzi marka">
+            <label for="brandFilter">Marca:</label>
+            <input type="textarea" id="brandFilter" name="brand" placeholder="Marca...">
 
-            <label for="priceFilter" >Prezioa:</label>
-            <input type="number" id="priceFilter" name="price" placeholder="prezio maximoa">
+            <label for="priceFilter" >Precio:</label>
+            <input type="number" id="priceFilter" name="price" placeholder="precio maximo">
 
-            <label for="balorazioFilter">Balorazioa:</label>
+            <label for="balorazioFilter">Valoracion:</label>
             <select id="balorazioFilter" name="balorazioa">
-                <option value="all" <?php if (isset($_GET['balorazioa']) && $_GET['balorazioa'] === 'all') echo 'selected="selected"'; ?>>Denak</option>
+                <option value="all" <?php if (isset($_GET['balorazioa']) && $_GET['balorazioa'] === 'all') echo 'selected="selected"'; ?>>Todos</option>
                 <option value="1" <?php if (isset($_GET['balorazioa']) && $_GET['balorazioa'] === '1') echo 'selected="selected"'; ?>>1⭐</option>
                 <option value="2" <?php if (isset($_GET['balorazioa']) && $_GET['balorazioa'] === '2') echo 'selected="selected"'; ?>>2⭐</option>
                 <option value="3" <?php if (isset($_GET['balorazioa']) && $_GET['balorazioa'] === '3') echo 'selected="selected"'; ?>>3⭐</option>
@@ -59,11 +59,11 @@
                 <option value="5" <?php if (isset($_GET['balorazioa']) && $_GET['balorazioa'] === '5') echo 'selected="selected"'; ?>>5⭐</option>
             </select>
             <br><br>
-            <button aria-label="Filtratu" type="submit" class="filter-button" id="filter-button">Filtratu</button>
+            <button aria-label="Filtratu" type="submit" class="filter-button" id="filter-button">Filtrar</button>
         </form>
     </div>
 
-    <center><h2>Gure almazenaren katalogoa</h2></center>
+    <center><h2>Catalogo de nuestro almacen</h2></center>
     <center>
     <?php
     require_once("../../require/functions.php");

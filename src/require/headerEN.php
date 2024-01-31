@@ -26,7 +26,7 @@
         
 
         <div id="favorites-list">
-            <h2>Gustokoenak</h2>
+            <h2>Favorites</h2>
             <ul id="favorites">
             </ul>
         </div>
@@ -35,11 +35,11 @@
 
         <div id="cart-sidebar" class="offcanvas offcanvas-end">
             <label type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas">✖️</label>
-            <h2 id="carrito">Erosketa saskia</h2>
+            <h2 id="carrito">Shopping cart</h2>
             <ul id="cart-items-sidebar" class="list-group"></ul>
-            <p id="cart-total-sidebar">Totala: 0.00€</p>
-            <button id="clear-cart-btn-sidebar" class="btn btn-danger mt-3">Hustu saskia</button>
-            <button id="checkout-btn-sidebar"><a href="../Ordainketa/ordainketa.php">Erosketa egin</a></button>
+            <p id="cart-total-sidebar">Total: 0.00€</p>
+            <button id="clear-cart-btn-sidebar" class="btn btn-danger mt-3">Empty cart</button>
+            <button id="checkout-btn-sidebar" >Make a purchase</button>
         </div>
 
     </header>
@@ -48,11 +48,11 @@
     <div class="container-menu">
         <div class="cont-menu">
             <nav>
-            <a href="../Hasiera/index.php">Hasiera</a>
-            <a href="../GureInformazia/gureinformazioa.php">Gure informazioa</a>
-            <a href="../Katalogo/katalogoa.php">Katalogoa</a>
-            <a href="../Notiziak/notiziak.php">Notiziak</a>
-            <a href="../Hornitzaileak/hornitzaileak.php">Hornitzaileak</a>
+            <a href="../Hasiera/index.php">Start</a>
+            <a href="../GureInformazia/gureinformazioa.php">Our information</a>
+            <a href="../Katalogo/katalogoa.php">Catalog</a>
+            <a href="../Notiziak/notiziak.php">News</a>
+            <a href="../Hornitzaileak/hornitzaileak.php">Suppliers</a>
             </nav>
             <label for="btn-menu">✖️</label>
         </div>
