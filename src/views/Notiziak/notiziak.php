@@ -7,26 +7,26 @@
 
     <div class="filter-section">
         <form method="GET">
-            <label for="dateFilterFrom">Hasierako data:</label>
+            <label for="dateFilterFrom"><?= itzuli("HasDat") ?></label>
             <input type="date" id="dateFilterFrom" name="dateFrom" value="<?php echo isset($_GET['dateFrom']) ? $_GET['dateFrom'] : ''; ?>">
-            <label for="dateFilterTo">Amaierako data:</label>
+            <label for="dateFilterTo"><?= itzuli("AmaiDat") ?></label>
             <input type="date" id="dateFilterTo" name="dateTo" value="<?php echo isset($_GET['dateTo']) ? $_GET['dateTo'] : ''; ?>">
-            <button aria-label="Filtratu" type="submit" class="filter-button" id="filter-button">Filtratu</button>
+            <button aria-label="Filtratu" type="submit" class="filter-button" id="filter-button"><?= itzuli("filtratu") ?></button>
         </form>
     </div>        
     <div class="filter-section">
         <form method="GET">
-            <label for="fecha">Data:</label><br>
+            <label for="fecha"><?= itzuli("Data") ?></label><br>
             <input type="date" id="fecha" name="fecha" value="<?php echo isset($_GET['fecha']) ? $_GET['fecha'] : ''; ?>" ><br>
             <select name="seleccion1" id="seleccion1">
                 <option value="all" <?php if (isset($_GET['seleccion1']) && $_GET['seleccion1'] === 'all') echo 'selected="selected"'; ?>></option>
-                <option value="aurreragokoak" <?php if (isset($_GET['seleccion1']) && $_GET['seleccion1'] === 'aurreragokoak') echo 'selected="selected"'; ?>>aurreragokoak</option>
-                <option value="lehenagokoak" <?php if (isset($_GET['seleccion1']) && $_GET['seleccion1'] === 'lehenagokoak') echo 'selected="selected"'; ?>>lehenagokoak</option>
+                <option value="aurreragokoak" <?php if (isset($_GET['seleccion1']) && $_GET['seleccion1'] === 'aurreragokoak') echo 'selected="selected"'; ?>><?= itzuli("aurr") ?></option>
+                <option value="lehenagokoak" <?php if (isset($_GET['seleccion1']) && $_GET['seleccion1'] === 'lehenagokoak') echo 'selected="selected"'; ?>><?= itzuli("lehen") ?></option>
             </select>
-            <button aria-label="Filtratu" type="submit" class="filter-button" id="filter-button">Filtratu</button>
+            <button aria-label="Filtratu" type="submit" class="filter-button" id="filter-button"><?= itzuli("filtratu") ?></button>
         </form>
     </div>
-    <center><h2>Berri informatikoak</h2></center>
+    <center><h2><?= itzuli("Berri") ?></h2></center>
     <center>
     <?php     
     require_once("../../require/functions.php");

@@ -6,25 +6,25 @@
     ?>
 
     <center>
-    <h2>Produktu informatikoen eskaintza bereziak</h2>
-    <p>Ezagutu gure eskaintza esklusiboak ordenagailuetan, softwaretan eta gehiagotan.</p>
+    <h2><?= itzuli("hasi1") ?></h2>
+    <p><?= itzuli("hasi2") ?></p>
     </center>
     <main>
         <section class="hero">
-            <a href="../Katalogo/katalogoa.php" class="btn">Ikusi katalogoa</a>
+            <a href="../Katalogo/katalogoa.php" class="btn"><?= itzuli("katalogoBotoia") ?></a>
         </section>
         <section class="featured-offers">
             <div class="offer">
-                <h2 style=color:red;>Eskaintzak</h2>
+                <h2 style=color:red;><?= itzuli("eskaintzak") ?></h2>
                 <img src="../../../public/laptop.jpg" alt="Laptop en oferta">
                 <h3>HP ProBook</h3>
-                <p>Errendimendu handiko ordenagailua HD pantailarekin, Intel Core i7 prozesadorea eta RAMeko 8 GB.</p>
+                <p><?= itzuli("oferta1") ?></p>
                 <p class="price">800€</p>
             </div>
             <div class="offer">
                 <img src="../../../public/software.jpg" alt="Software en oferta">
                 <h3>Microsoft Office 365</h3>
-                <p>Word, Excel, PowerPoint eta gehiago barne hartzen dituen urtebeteko harpidetza.</p>
+                <p><?= itzuli("oferta2") ?></p>
                 <p class="price">35€</p>
             </div>
         </section>

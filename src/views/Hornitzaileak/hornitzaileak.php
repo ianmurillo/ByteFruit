@@ -7,26 +7,26 @@
  
 <div class="container">
     
-    <center><h2>Hornitzaile formularioa</h2></center>
+    <center><h2><?= itzuli("hornitzaileak") ?></h2></center>
 
     <form action="hornitzaileak.php" method="post">
-            <label for="telefonoa">Telefono zenbakia:</label>
+            <label for="telefonoa"><?= itzuli("telZen") ?></label>
             <input type="text" name="TelZenbakia" required><br><br>
 
-            <label for="izena">Izena:</label>
+            <label for="izena"><?= itzuli("saskia") ?></label>
             <input type="text" name="Izena" required><br><br>
 
-            <label for="NAN">NAN:</label>
+            <label for="NAN"><?= itzuli("nan") ?></label>
             <input type="text" name="NAN" required><br><br>
 
-            <label>Hornitzaile mota:</label>
-            <input type="radio" name="HornitzaileMota" value="empresa" required> Enpresa
-            <input type="radio" name="HornitzaileMota" value="pertsona" required> Pertsona<br><br>
+            <label><?= itzuli("mota") ?></label>
+            <input type="radio" name="HornitzaileMota" value="empresa" required> <?= itzuli("op1") ?>
+            <input type="radio" name="HornitzaileMota" value="pertsona" required> <?= itzuli("op2") ?><br><br>
 
-            <label for="helbidea">Helbidea:</label>
+            <label for="helbidea"><?= itzuli("helb") ?></label>
             <input type="text" name="Helbidea" required><br><br>
 
-            <label for="eskaintza">Eskaintzen den zerbitzua edo produktua:</label>
+            <label for="eskaintza"><?= itzuli("zerbiztua") ?></label>
             <input type="text" name="Zerbitzua" required><br><br>
 
             <input type="submit" value="Gorde hornitzailea">
