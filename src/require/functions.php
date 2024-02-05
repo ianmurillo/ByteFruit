@@ -1,7 +1,7 @@
 <?php
     function connect(&$conn){    
         /** DB-ra konektatu */
-        $dbName = "newlife";
+        $dbName = "bytefruit";
         $conn = null;
         $servername = "localhost";
         $username = "root";

@@ -24,7 +24,7 @@ return [
     "balorazioa" => "Ratings:",
     "balorazioDenak" => "All",
     "filtratu" => "Filter",
-    "alamzena" => "Catalog from our warehouse",
+    "almazena" => "Catalog from our warehouse",
     "prozesadorea" => "Processors",
     "txartGrafikoa" => "Graphics Card",
     "plaka" => "Motherboard",
@@ -104,7 +104,8 @@ return [
     "notizi29desk" => "How Artificial Intelligence is used for improvement and diagnostics in the health sector is explained.",
     "notizi30" => "Virtual Reality and Augmented Reality for the Future",
     "notizi30desk" => "Virtual reality and augmented reality technologies promise an exciting future.",
-
+    "aukeraHizkuntza" => "es",
+    
     // supplier form
     "hornitzaileak" => "Supplier Form",
     "telZen" => "Phone Number:",
@@ -117,17 +118,13 @@ return [
     "zerbitzua" => "Service or Product Offered",
 
     // payment gateway
-    "zureDatu" => "YOUR DETAILS",
-    "herria" => "City:",
-    "placeHolder" => "street, portal, floor, house",
-    "pais" => "Country:",
-    "pk" => "Postal Code:",
-    "OrdSek" => "PAYMENT SECTION",
-    "TxartName" => "Name on the card:",
-    "txart" => "Accepted Cards",
-    "TxartZen" => "Card Number:",
-    "epemuga" => "Expiry Date",
-    "pagarPasarela" => "Pay",
+    "titulo" => "Formulario de Pago",
+    "detalles" => "Detalles de Tarjeta de Crédito",
+    "nombre" => "Nombre del Titular de la Tarjeta:",
+    "tarjeta" => "Número de Tarjeta:",
+    "fecha" => "Fecha de Caducidad (MM/YY):",
+    "cvv" => "CVV:",
+    "pago" => "Realizar Pago",
 
     // header 
     "hasiera" => "Home",

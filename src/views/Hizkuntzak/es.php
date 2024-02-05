@@ -24,7 +24,7 @@ return [
     "balorazioa" => "Valoraciones:",
     "balorazioDenak" => "Todas",
     "filtratu" => "Filtrar",
-    "alamzena" => "Catálogo de nuestro almacén",
+    "almazena" => "Catálogo de nuestro almacén",
     "prozesadorea" => "Procesadores",
     "txartGrafikoa" => "Tarjeta Gráfica",
     "plaka" => "Placa Base",
@@ -104,6 +104,7 @@ return [
     "notizi29desk" => "Cómo se utiliza la Inteligencia Artificial para mejorar el diagnóstico y la atención médica.",
     "notizi30" => "Realidad virtual y aumentada para el futuro",
     "notizi30desk" => "Las tecnologías de realidad virtual y aumentada prometen un futuro emocionante.",
+    "aukeraHizkuntza" => "es",
 
     // formulario del proveedor
     "hornitzaileak" => "Formulario de proveedores",
@@ -117,17 +118,13 @@ return [
     "zerbitzua" => "Servicio o producto ofrecido",
 
     // pasarela de pago
-    "zureDatu" => "TUS DATOS",
-    "herria" => "Ciudad:",
-    "placeHolder" => "calle, portal, piso, casa",
-    "pais" => "País:",
-    "pk" => "Código Postal:",
-    "OrdSek" => "SECCIÓN DE PAGO",
-    "TxartName" => "Nombre en la tarjeta:",
-    "txart" => "Tarjetas Aceptadas",
-    "TxartZen" => "Número de la tarjeta:",
-    "epemuga" => "Fecha de caducidad",
-    "pagarPasarela" => "Pagar",
+    "titulo" => "Formulario de Pago",
+    "detalles" => "Detalles de Tarjeta de Crédito",
+    "nombre" => "Nombre del Titular de la Tarjeta:",
+    "tarjeta" => "Número de Tarjeta:",
+    "fecha" => "Fecha de Caducidad (MM/YY):",
+    "cvv" => "CVV:",
+    "pago" => "Realizar Pago",
 
     // encabezado 
     "hasiera" => "Inicio",

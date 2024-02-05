@@ -55,11 +55,14 @@
     }
 
     $result = $conn->query($sql);    
-    if ($result->num_rows > 0) {         
+    if ($result->num_rows > 0) {     
+        
+        $aukerahizkuntza = itzuli("aukeraHizkuntza");
+        
         while ($row = $result->fetch_assoc()) {             
             echo "<div class='notiziak'>                     
-            <h3>" . $row["Izenburua"] . "</h3>                    
-            <p>" . $row["Notizia"] . "</p>    
+            <h3>" . $row["Izenburua_" . $aukerahizkuntza] . "</h3>                    
+            <p>" . $row["Notizia_" . $aukerahizkuntza] . "</p>    
             <p>" . $row["ArgitaratzeData"] . "</p> 
             <img src='../../../public/" . $row["Argazkiak"] . "'>                  
             </div>";         

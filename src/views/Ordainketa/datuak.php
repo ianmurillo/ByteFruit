@@ -40,28 +40,24 @@
     <div class="container mt-5">
         <div id="caja" class="row justify-content-center">
             <div class="col-md-8">
-                <h2 class="mb-4"><?= itzuli("titulo") ?></h2>
+                <h2 class="mb-4">Datuak:</h2>
 
                 <!-- Sección para Tarjeta de Crédito -->
                 <div class="payment-method-section" id="credit-card-section">
                     <h3><?= itzuli("detalles") ?></h3>
                     <!-- Campos para Tarjeta de Crédito -->
                     <div class="form-group">
-                        <label for="card-holder"><?= itzuli("nombre") ?></label>
-                        <input type="text" class="form-control" id="card-holder" name="card-holder" required>
+                        <label for="nan">NAN</label>
+                        <input type="text" class="form-control" id="nan" name="card-holder" required>
                     </div>
                     <div class="form-group">
-                        <label for="card-number"><?= itzuli("tarjeta") ?></label>
-                        <input type="text" class="form-control" id="card-number" name="card-number" required data-parsley-pattern="^[0-9]{16}$">
+                        <label for="korreo">Korreo elektronikoa</label>
+                        <input type="text" class="form-control" id="korreo" name="card-number" required data-parsley-pattern="^[0-9]{16}$">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="expiry-date"><?= itzuli("fecha") ?></label>
-                            <input type="text" class="form-control" id="expiry-date" name="expiry-date" placeholder="MM/YY" required data-parsley-pattern="^(0[1-9]|1[0-2])\/\d{2}$">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="cvv"><?= itzuli("cvv") ?></label>
-                            <input type="text" class="form-control" id="cvv" name="cvv" required data-parsley-pattern="^[0-9]{3}$">
+                            <label for="expiry-date">Kreditu txartela:</label>
+                            <input type="text" class="form-control" id="card-number" name="card-number" required data-parsley-pattern="^[0-9]{16}$">
                         </div>
                     </div>
                 </div>
@@ -69,7 +65,7 @@
                 
 
                 <!-- Botón de Pago -->
-                <button type="submit" class="btn btn-primary"><?= itzuli("pago") ?></button>
+                <button type="submit" class="btn btn-primary" id="miBoton">Erosketa egin</button>
             </div>
         </div>
     </div>
@@ -106,6 +102,40 @@
                 }
             });
         });
+    </script>
+    <script>
+    function realizarCompra() {
+        var formData = {
+            nan: $("#nan").val(),
+            email: $("#korreo").val(),
+            metodoPago: $("#metodoPago").val()
+        };
+
+        // Enviar datos del formulario en formato JSON mediante AJAX
+        $.ajax({
+                type: "POST",
+                url: "procesar_formulario.php",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(formData)
+            })
+            .done(function(response) {
+                // Manejar la respuesta del servidor    
+
+                var boton = document.getElementById('miBoton');
+
+                // Agrega un escuchador de eventos al botón
+                boton.addEventListener('click', function() {
+                // Redirige a la página deseada
+                window.location.href = 'ordainketa.php';
+                });
+            })
+            .fail(function() {
+                // Manejar errores
+                alert("Error en la solicitud AJAX");
+            })
+            .always(function() {});
+    }
     </script>
 
 </body>

@@ -1,45 +1,30 @@
 <?php
-
-// EKINTZAK
 session_start();
-//Sesioa hasten dugu bertan gordetzeko zein hizkuntzatan ari garen
 
-if (!isset($_SESSION["_LANGUAGE"])) { //Sesioan hizkuntza ez bada gorde
-    //Defektuzko hizkuntza jartzen dugun funtzioari deitzen diogu
-    setSessionLanguageToDefault();
+$KARPETA_DIR = "/ByteFruit/WebOrria/ByteFruit";
+define('APP_DIR', $_SERVER['DOCUMENT_ROOT'] . $KARPETA_DIR);
+
+if (!isset($_SESSION["hizkuntza"])) {
+    defaultLanguage();
 }
 
-changeSessionLanguage(); //Beti funtzio hontan sartzen gara
+aldatuHizkuntza();
 
-
-/** FUNTZIOAK */
-function setSessionLanguageToDefault()
-{
-  $_SESSION["_LANGUAGE"] = "eus"; //Defektuz "eus" hizkuntza jartzen dugu (hemen "en" jarri ezkero, language karpetan en.php izeneko fitxategi bat egon beharko litzateke)
+function defaultLanguage(){
+    $_SESSION["hizkuntza"] = "eus";
 }
 
-function changeSessionLanguage()
-{
-  /** post batean informazioa datorrenean bakarrik aldatuko da */
-  if (isset($_POST["selectLang"])) {
-    $_SESSION["_LANGUAGE"] = $_POST["selectLang"]; //post-ean datorren hizkuntza jarriko du sesioko aldagaiean
-  }
-
-}
-function it($indexPhrase)
-{
-  //Itzulpen array-a sortzen da
-  static $tranlationsArray = array();
-
-  //eus.php edo es.php existitzen den begiratzen da
-  if (file_exists(APP_DIR . '/src/views/Hizkuntzak' . $_SESSION["_LANGUAGE"] . '.php')) {
-    $url = APP_DIR . '/src/views/Hizkuntzak';
-    //Existitzen bada fitxategi horretan dagoen array-a $translationArray barruan sartzen da
-    $tranlationsArray = include( $url . $_SESSION["_LANGUAGE"] . '.php');
-
-  }
-  //Array-eko indizearen balioa itzultzen du.
-  return (!array_key_exists($indexPhrase, $tranlationsArray)) ? $indexPhrase : $tranlationsArray[$indexPhrase];
+function aldatuHizkuntza(){
+    if (isset($_POST["aukeratutakoHizkuntza"])) {
+        $_SESSION["hizkuntza"] = $_POST["aukeratutakoHizkuntza"];
+    }
 }
 
-?>
+function itzuli($indexPhrase){
+    static $itzultzekoArray = array();
+    if (file_exists(APP_DIR . '/src/views/Hizkuntzak/' . $_SESSION["hizkuntza"] . '.php')) {
+        $url = APP_DIR . '/src/views/Hizkuntzak/';
+        $itzultzekoArray = include($url . $_SESSION["hizkuntza"] . '.php');
+    }
+    return (!array_key_exists($indexPhrase, $itzultzekoArray)) ? $indexPhrase : $itzultzekoArray[$indexPhrase];
+}

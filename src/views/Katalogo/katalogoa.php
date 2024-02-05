@@ -33,7 +33,7 @@
             <select id="categoryFilter" name="category">
                 <option value="all" <?php if (isset($_GET['category']) && $_GET['category'] === 'Dena') echo 'selected="selected"'; ?>><?= itzuli("dena") ?></option>
                 <option value="Prozesadorea" <?php if (isset($_GET['category']) && $_GET['category'] === 'Prozesadorea') echo 'selected="selected"'; ?>><?= itzuli("prozesadorea") ?></option>
-                <option value="Txartel Grafikoa" <?php if (isset($_GET['category']) && $_GET['category'] === 'Txartel Grafikoa') echo 'selected="selected"'; ?>><?= itzuli("txartelGrafikoa") ?></option>
+                <option value="Txartel Grafikoa" <?php if (isset($_GET['category']) && $_GET['category'] === 'Txartel Grafikoa') echo 'selected="selected"'; ?>><?= itzuli("txartlGrafikoa") ?></option>
                 <option value="Plaka Basea" <?php if (isset($_GET['category']) && $_GET['category'] === 'Plaka Basea') echo 'selected="selected"'; ?>><?= itzuli("plaka") ?></option>
                 <option value="Disko Gogorra" <?php if (isset($_GET['category']) && $_GET['category'] === 'Disko Gogorra') echo 'selected="selected"'; ?>><?= itzuli("disko") ?></option>
                 <option value="Ram Memoria" <?php if (isset($_GET['category']) && $_GET['category'] === 'Ram Memoria') echo 'selected="selected"'; ?>><?= itzuli("ram") ?></option>
@@ -106,7 +106,7 @@
                 <p style='color: red;'>" . $row["prezioaS"] . "€</p>
                 <p>" . $row["balorazioa"] . "⭐</p>
                 <div>
-                <button class='add-to-cart' data-name='" . $row["izena"] . "' data-marka='" . $row["marka"] . "' data-modeloa='" . $row["modeloa"] . "'  data-price='" . $row["prezioaS"] . "'><?= itzuli('saskiraGehitu') ?></button>
+                <button class='add-to-cart' data-name='" . $row["izena"] . "' data-marka='" . $row["marka"] . "' data-modeloa='" . $row["modeloa"] . "'  data-price='" . $row["prezioaS"] . "'> ". itzuli('saskiraGehitu') ." </button>
                 <label class='add-to-favorites' onclick=\"addToFavorites('" . $row["izena"] . "')\">♡</label>
                 </div>
                 </div>";         

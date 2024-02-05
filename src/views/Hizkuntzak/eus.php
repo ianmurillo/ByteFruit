@@ -24,7 +24,7 @@ return[
     "balorazioa" => "Balorazioak:",
     "balorazioDenak" => "Denak",
     "filtratu" => "Filtratu",
-    "alamzena" => "Gure almazenaren katalogoa",
+    "almazena" => "Gure almazenaren katalogoa",
     "prozesadorea" => "Prozesadoreak",
     "txartGrafikoa" => "Txartel Grafikoa",
     "plaka" => "Plaka Basea",
@@ -104,6 +104,7 @@ return[
     "notizi29desk" => "Nola erabilten den Adimen Artifiziala osasun arloan hobekuntza eta diagnostikoa bideratzeko azaltzen da.",
     "notizi30" => "Errealitate birtuala eta areagatik etorkizuna",
     "notizi30desk" => "Errealitate birtuala eta areagako teknologiak etorkizun emozionagarria hurbiltzen duten teknologiak promesatzen dute.",
+    "aukeraHizkuntza" => "eus",
 
     //hornitzaileform
 
@@ -118,17 +119,13 @@ return[
     "zerbitzua" => "Eskaintzen den zerbitzua edo produktua",
 
     //pasarela de pago
-    "zureDatu" => "ZURE DATUAK",
-    "herria" => "Herria:",
-    "placeHolder" => "kalea portala, pisua etxea",
-    "pais" => "Herrialdea:",
-    "pk" => "Posta Kodea:",
-    "OrdSek" => "ORDAINKETA SEKZIOA",
-    "TxartName" => "Txarteleko Izena:",
-    "txart" => "Onartzen Diren Txartelak",
-    "TxartZen" => "Txarteleko Zenbakia:",
-    "epemuga" => "Epemuga",
-    "pagarPasarela" => "Ordaindu",
+    "titulo" => "Formulario de Pago",
+    "detalles" => "Detalles de Tarjeta de Crédito",
+    "nombre" => "Nombre del Titular de la Tarjeta:",
+    "tarjeta" => "Número de Tarjeta:",
+    "fecha" => "Fecha de Caducidad (MM/YY):",
+    "cvv" => "CVV:",
+    "pago" => "Realizar Pago",
 
     //header 
     "hasiera" => "Hasiera",
@@ -136,7 +133,7 @@ return[
     "katalogoa" => "Katalogoa",
     "notiziak" => "Notiziak",
     "hornitzaileka" => "Hornitzaileak",
-    "fav" => "Gustokoenak"
+    "fav" => "Gustokoenak",
     "saskia" => "Erosketa saskia",
     "total" => "Totala: 0.00€",
     "hustu" => "Hustu saskia",

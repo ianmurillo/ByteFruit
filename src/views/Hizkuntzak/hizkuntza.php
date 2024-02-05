@@ -1,11 +1,9 @@
 <form id="languageForm" method="post">
-    <select name="selectLang">
-        <!-- PHPko logika honekin formularioan zein hizkuntza agertzen den aukeratuta erabakiko dugu -->
-        <option value="eus" <?php
-                            
-                            if (isset($_POST['selectLang']) && $_POST['selectLang'] === 'eus') {
+    <select name="aukeratutakoHizkuntza" id="hizkuntza">
+        <option value="eus" <?php                        
+                            if (isset($_POST['aukeratutakoHizkuntza']) && $_POST['aukeratutakoHizkuntza'] === 'eus') {
                                 echo 'selected';
-                            } elseif (!isset($_POST['selectLang']) && isset($_SESSION['_LANGUAGE']) && $_SESSION['_LANGUAGE'] === 'eus') {
+                            } elseif (!isset($_POST['aukeratutakoHizkuntza']) && isset($_SESSION['_LANGUAGE']) && $_SESSION['_LANGUAGE'] === 'eus') {
                                 
                                 echo 'selected';
                             }
@@ -13,23 +11,23 @@
                             ?>> EUS</option>
         <option value="es" <?php
                             
-                            if (isset($_POST['selectLang']) && $_POST['selectLang'] === 'es') {
+                            if (isset($_POST['aukeratutakoHizkuntza']) && $_POST['aukeratutakoHizkuntza'] === 'es') {
                                 echo 'selected';
-                            } elseif (!isset($_POST['selectLang']) && isset($_SESSION['_LANGUAGE']) && $_SESSION['_LANGUAGE'] === 'es') {
+                            } elseif (!isset($_POST['aukeratutakoHizkuntza']) && isset($_SESSION['_LANGUAGE']) && $_SESSION['_LANGUAGE'] === 'es') {
                                 
                                 echo 'selected';
                             }
                             
                             ?>> ES</option>
         <option value="en" <?php
-                            if (isset($_POST['selectLang']) && $_POST['selectLang'] === 'en') {
+                            if (isset($_POST['aukeratutakoHizkuntza']) && $_POST['aukeratutakoHizkuntza'] === 'en') {
                                 echo 'selected';
-                            } elseif (!isset($_POST['selectLang']) && isset($_SESSION['_LANGUAGE']) && $_SESSION['_LANGUAGE'] === 'en') {
+                            } elseif (!isset($_POST['aukeratutakoHizkuntza']) && isset($_SESSION['_LANGUAGE']) && $_SESSION['_LANGUAGE'] === 'en') {
                                 
                                 echo 'selected';
                             }
                             
                             ?>> EN</option>
     </select>
-    <button><?= itzuli("aldatu") ?></button>
+    <button id="aldatu"><?= itzuli("aldatu") ?></button>
 </form>
