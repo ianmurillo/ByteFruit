@@ -10,7 +10,7 @@ return [
 
     // nuestra información
     "infor" => "Nuestra información",
-    "deskribapena" => "Objetivos",
+    "deskribapena" => "Somos una empresa compuesta por tres alumnos del grado de Desarrollo de Aplicaciones Multiplataforma. Hemos creado esta empresa para vender productos nuevos y renovados, para ello hemos creado esta página web con las opciones de poder comprar y hacerte cliente. Si teneis alguna duda nos encontramos aqui!",
 
     // catálogo
     "bilatzailea" => "Buscar producto...",
@@ -137,6 +137,7 @@ return [
     "total" => "Total: 0.00€",
     "hustu" => "Vaciar carrito",
     "erosi" => "Realizar compra",
+    "ezabatu" => "Eliminar",
 
     //hizkuntza
     "aldatu" => "cambiar"

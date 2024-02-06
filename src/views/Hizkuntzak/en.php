@@ -10,7 +10,7 @@ return [
 
     // our information
     "infor" => "Our information",
-    "deskribapena" => "Objectives",
+    "deskribapena" => "We're a company made up of three students from the Multi-Platform Application Development degree. We have created this company to sell new and renovated products, and to do so, we have created this website with options to buy you and make you a customer. If you have any doubts, here we are!ectives",
 
     // catalog
     "bilatzailea" => "Search product...",
@@ -137,6 +137,7 @@ return [
     "total" => "Total: 0.00€",
     "hustu" => "Empty Cart",
     "erosi" => "Make a purchase",
+    "ezabatu" => "Delete",
 
     //hizkuntza
     "aldatu" => "change"

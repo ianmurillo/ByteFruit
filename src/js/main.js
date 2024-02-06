@@ -1,15 +1,69 @@
+// Objeto para almacenar los productos agregados
+let productosAgregados = {};
 
+// Función para obtener los productos de favoritos desde el almacenamiento local
+function getFavoritesFromLocalStorage() {
+    const favorites = localStorage.getItem('productosAgregados');
+    if (favorites) {
+      // Si hay productos de favoritos en el almacenamiento local, los fusionamos con los productos existentes
+      productosAgregados = { ...productosAgregados, ...JSON.parse(favorites) };
+    }
+  }
+  
 
-function addToFavorites(productName) {
+// Función para guardar los productos de favoritos en el almacenamiento local
+function saveFavoritesToLocalStorage() {
+  localStorage.setItem('productosAgregados', JSON.stringify(productosAgregados));
+}
+
+// Agregar evento para cargar los productos de favoritos desde el almacenamiento local cuando se carga la página
+document.addEventListener('DOMContentLoaded', function () {
+  getFavoritesFromLocalStorage();
+  updateFavoritesUI();
+  
+  // Obtener referencias a la lista de favoritos y al botón de abrir favoritos
+  const favoritesList = document.getElementById('favorites-list');
+  const openFavoritesButton = document.getElementById('open-favorites');
+
+  // Estado de la lista de favoritos
+  let favoritesVisible = false;
+
+  // Función para alternar la visibilidad de la lista de favoritos
+  function toggleFavorites() {
+    favoritesVisible = !favoritesVisible;
+    favoritesList.style.display = favoritesVisible ? 'block' : 'none';
+  }
+
+  // Agregar evento de clic al botón de abrir favoritos
+  openFavoritesButton.addEventListener('click', function () {
+    // Alternar la visibilidad de la lista de favoritos
+    toggleFavorites();
+  });
+});
+
+function addToFavorites(productName, productModel, productImage, productNameDisplay) {
+  // Generar una clave única para el producto basada en el nombre y el modelo
+  const productKey = productName + '-' + productModel;
+
+  
+
+  // Agregar el producto a la lista de favoritos
   const favoritesList = document.getElementById('favorites');
   const product = document.createElement('li');
   product.className = 'favorite-item';
+  var transEliminar = document.getElementById("transEliminar").value;
   product.innerHTML = `
-      <img src='../../../public/imagen_producto.jpg' alt='${productName}'>
-      <span>${productName}</span>
-      <button class='remove-from-favorites' onclick="removeFromFavorites(this)">Eliminar</button>
+      <img src='${productImage}' alt='${productName}'>
+      <span>${productNameDisplay}</span>
+      <button class='remove-from-favorites' onclick="removeFromFavorites(this)">` + transEliminar + `</button>
   `;
   favoritesList.appendChild(product);
+
+  // Agregar el producto al objeto de productos agregados
+  productosAgregados[productKey] = true;
+
+  // Guardar los productos de favoritos en el almacenamiento local
+  saveFavoritesToLocalStorage();
 
   // Mostrar la lista de favoritos si no está visible
   document.getElementById('favorites-list').style.display = 'block';
@@ -20,11 +74,45 @@ function removeFromFavorites(button) {
   const favoritesList = productItem.parentNode;
   favoritesList.removeChild(productItem);
 
+  // Obtener el nombre y el modelo del producto para eliminarlo del objeto de productos agregados
+  const productName = productItem.querySelector('span').textContent;
+  const productModel = productItem.querySelector('img').alt;
+  const productKey = productName + '-' + productModel;
+
+  // Eliminar el producto del objeto de productos agregados
+  delete productosAgregados[productKey];
+
+  // Guardar los productos de favoritos actualizados en el almacenamiento local
+  saveFavoritesToLocalStorage();
+
   // Ocultar la lista de favoritos si está vacía
   if (favoritesList.children.length === 0) {
-      document.getElementById('favorites-list').style.display = 'none';
+    document.getElementById('favorites-list').style.display = 'none';
   }
 }
+
+// Función para actualizar la interfaz de usuario de la lista de favoritos
+function updateFavoritesUI() {
+  const favoritesList = document.getElementById('favorites');
+  favoritesList.innerHTML = '';
+  for (const productKey in productosAgregados) {
+    const [productName, productModel] = productKey.split('-');
+    const productImage = ''; // Aquí deberías obtener la URL de la imagen según el nombre y el modelo del producto
+    const productNameDisplay = productName; // Nombre del producto para mostrar
+    const product = document.createElement('li');
+    product.className = 'favorite-item';
+    var transEliminar = document.getElementById("transEliminar").value;
+    product.innerHTML = `
+        <img src='${productImage}' alt='${productName}'>
+        <span>${productNameDisplay}</span>
+        <button class='remove-from-favorites' onclick="removeFromFavorites(this)">` + transEliminar + `</button>
+    `;
+    favoritesList.appendChild(product);
+  }
+}
+
+
+  
 
     /* CARRITO*/
  
@@ -129,7 +217,3 @@ function removeFromFavorites(button) {
             return cart.items.reduce((total, item) => total + item.price * item.quantity, 0);
         }
     });
-    
-    
-    
-    /*TRADUCTOR*/

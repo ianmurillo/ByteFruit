@@ -99,17 +99,17 @@
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "<div class='product'>                     
-                <img src='../../../public/" . $row["Irudia"] . "'>                     
-                <h3>" . $row["marka"] . "</h3>    
-                <p>" . $row["izena"] . "</p>                   
-                <p>" . $row["modeloa"] . "</p>
-                <p style='color: red;'>" . $row["prezioaS"] . "€</p>
-                <p>" . $row["balorazioa"] . "⭐</p>
-                <div>
-                <button class='add-to-cart' data-name='" . $row["izena"] . "' data-marka='" . $row["marka"] . "' data-modeloa='" . $row["modeloa"] . "'  data-price='" . $row["prezioaS"] . "'> ". itzuli('saskiraGehitu') ." </button>
-                <label class='add-to-favorites' onclick=\"addToFavorites('" . $row["izena"] . "')\">♡</label>
-                </div>
-                </div>";         
+        <img src='../../../public/" . $row["Irudia"] . "'>                     
+        <h3>" . $row["marka"] . "</h3>    
+        <p>" . $row["izena"] . "</p>                   
+        <p>" . $row["modeloa"] . "</p>
+        <p style='color: red;'>" . $row["prezioaS"] . "€</p>
+        <p>" . $row["balorazioa"] . "⭐</p>
+        <div>
+          <button class='add-to-cart' data-name='" . $row["izena"] . "' data-marka='" . $row["marka"] . "' data-modeloa='" . $row["modeloa"] . "'  data-price='" . $row["prezioaS"] . "'> ". itzuli('saskiraGehitu') ." </button>
+          <label class='add-to-favorites' onclick=\"addToFavorites('" . $row["izena"] . "', '" . $row["modeloa"] . "', '../../../public/" . $row["Irudia"] . "', '" . $row["izena"] . "')\">♡</label>
+        </div>
+      </div>";       
             }   
     } else {
         echo "Ez dago datuak taulan.";

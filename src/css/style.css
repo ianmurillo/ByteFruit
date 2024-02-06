@@ -760,17 +760,35 @@ button {
 #hizkuntza {
     position: absolute;
     top: 20px;
-    right: 150px;
+    right: 240px;
     width: 52px;
     height: 25px;
 }
 
 #aldatu{
     position: absolute;
-    top: 10px;
-    right: 60px;
+    top: 12px;
+    right: 150px;
     color: #f0f0f0;
     background-color: #000000;
     width: 80px;
     height: 40px;
+}
+
+.favorite-item span {
+    color: black;
+    margin-right: 10px;
+  }
+
+#open-favorites{
+    position: absolute;
+    top: 10px;
+    right: 90px;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out; /* Agregamos una transición de opacidad */
+    color: #f0f0f0;
 }

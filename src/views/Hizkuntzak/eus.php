@@ -10,7 +10,7 @@ return[
 
     //gure informazioa
     "infor" => "Gure informazioa",
-    "deskribapena" => "Helburuak",
+    "deskribapena" => "Plataforma Anitzeko Aplikazioen Garapena graduko hiru ikaslek osatutako enpresa bat gara. Produktu berriak eta berrituak saltzeko sortu dugu enpresa hau, eta, horretarako, webgune hau sortu dugu, zu erosteko eta bezero egiteko aukerekin. Zalantzarik baduzue, hemen gaude!",
 
     //katalogoa
     "bilatzailea" => "Bilatu produktua...",
@@ -138,6 +138,7 @@ return[
     "total" => "Totala: 0.00€",
     "hustu" => "Hustu saskia",
     "erosi" => "Erosketa egin",
+    "ezabatu" => "Ezabatu",
 
     //hizkuntza
     "aldatu" => "aldatu"

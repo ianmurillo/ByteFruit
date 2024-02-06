@@ -12,10 +12,10 @@
     <main>
         <section class="hero">
             <a href="../Katalogo/katalogoa.php" class="btn"><?= itzuli("katalogoBotoia") ?></a>
+            <h2 style=color:red;><?= itzuli("eskaintzak") ?></h2>
         </section>
         <section class="featured-offers">
             <div class="offer">
-                <h2 style=color:red;><?= itzuli("eskaintzak") ?></h2>
                 <img src="../../../public/laptop.jpg" alt="Laptop en oferta">
                 <h3>HP ProBook</h3>
                 <p><?= itzuli("oferta1") ?></p>

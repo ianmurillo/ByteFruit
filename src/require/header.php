@@ -30,6 +30,12 @@
             ?>
         </div>
 
+        <div>
+        <label id="open-favorites">♡</label>
+        <input type="hidden" id="transEliminar" value="<?= itzuli('ezabatu')?>" />
+        </div>
+
+
         <div id="favorites-list">
             <h2><?= itzuli("fav") ?></h2>
             <ul id="favorites">

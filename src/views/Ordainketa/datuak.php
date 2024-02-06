@@ -44,7 +44,6 @@
 
                 <!-- Sección para Tarjeta de Crédito -->
                 <div class="payment-method-section" id="credit-card-section">
-                    <h3><?= itzuli("detalles") ?></h3>
                     <!-- Campos para Tarjeta de Crédito -->
                     <div class="form-group">
                         <label for="nan">NAN</label>
