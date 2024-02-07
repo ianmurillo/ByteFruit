@@ -31,8 +31,7 @@
         </div>
 
         <div>
-        <label id="open-favorites">♡</label>
-        <input type="hidden" id="transEliminar" value="<?= itzuli('ezabatu')?>" />
+            <label id="open-favorites" onclick="toggleFavorites()">♡</label>
         </div>
 
 
@@ -50,7 +49,7 @@
             <ul id="cart-items-sidebar" class="list-group"></ul>
             <p id="cart-total-sidebar"><?= itzuli("total") ?></p>
             <button id="clear-cart-btn-sidebar" class="btn btn-danger mt-3"><?= itzuli("hustu") ?></button>
-            <button id="checkout-btn-sidebar"><a href="../Ordainketa/datuak.php"><?= itzuli("erosi") ?></a></button>
+            <button id="checkout-btn-sidebar"><?= itzuli("erosi") ?></button>
         </div>
 
 
@@ -71,6 +70,7 @@
     </div>
 
     <script src="../../js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </body>
 
