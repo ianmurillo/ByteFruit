@@ -118,13 +118,19 @@ return [
     "zerbitzua" => "Service or Product Offered",
 
     // payment gateway
-    "titulo" => "Formulario de Pago",
-    "detalles" => "Detalles de Tarjeta de Crédito",
-    "nombre" => "Nombre del Titular de la Tarjeta:",
-    "tarjeta" => "Número de Tarjeta:",
-    "fecha" => "Fecha de Caducidad (MM/YY):",
+    "titulo" => "Payment Form",
+    "detalles" => "Credit Card Details",
+    "nombre" => "Cardholder Name:",
+    "tarjeta" => "Card Number:",
+    "fecha" => "Expiration Date (MM/YY):",
     "cvv" => "CVV:",
-    "pago" => "Realizar Pago",
+    "pago" => "Make Payment",
+
+    //data
+    "NAN" => "DNI:",
+    "izena" => "Name:",
+    "korreo" => "Email:",
+    "kontukorronte" => "Bank Account:",
 
     // header 
     "hasiera" => "Home",

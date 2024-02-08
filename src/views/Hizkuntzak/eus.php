@@ -119,13 +119,19 @@ return[
     "zerbitzua" => "Eskaintzen den zerbitzua edo produktua",
 
     //pasarela de pago
-    "titulo" => "Formulario de Pago",
-    "detalles" => "Detalles de Tarjeta de Crédito",
-    "nombre" => "Nombre del Titular de la Tarjeta:",
-    "tarjeta" => "Número de Tarjeta:",
-    "fecha" => "Fecha de Caducidad (MM/YY):",
+    "titulo" => "Ordainketa Formularioa",
+    "detalles" => "Kreditu Txartelaren Xehetasunak",
+    "nombre" => "Txartelaren Jabearen Izena:",
+    "tarjeta" => "Txartel Zenbakia:",
+    "fecha" => "Iraungitze Data (HH/IH):",
     "cvv" => "CVV:",
-    "pago" => "Realizar Pago",
+    "pago" => "Ordainketa Egin",
+
+    //datuak
+    "NAN" => "NAN:",
+    "izena" => "Izena:",
+    "korreo" => "Korreoa:",
+    "kontukorronte" => "Kontu Korrontea:",
 
     //header 
     "hasiera" => "Hasiera",

@@ -1,72 +1,106 @@
-$(document).ready(function () {
-    let productosAgregados = {};
+// Objeto para almacenar los productos agregados
+let productosAgregados = {};
 
-    function getFavoritesFromLocalStorage() {
-        const favorites = localStorage.getItem('productosAgregados');
-        if (favorites) {
-            productosAgregados = { ...productosAgregados, ...JSON.parse(favorites) };
-        }
+// Función para obtener los productos de favoritos desde el almacenamiento local
+function getFavoritesFromLocalStorage() {
+    const favorites = localStorage.getItem('productosAgregados');
+    if (favorites) {
+        // Si hay productos de favoritos en el almacenamiento local, los fusionamos con los productos existentes
+        productosAgregados = { ...productosAgregados, ...JSON.parse(favorites) };
     }
+}
 
-    function saveFavoritesToLocalStorage() {
-        localStorage.setItem('productosAgregados', JSON.stringify(productosAgregados));
-    }
+// Función para guardar los productos de favoritos en el almacenamiento local
+function saveFavoritesToLocalStorage() {
+    localStorage.setItem('productosAgregados', JSON.stringify(productosAgregados));
+}
 
-    function toggleFavorites() {
-        $('#favorites-list').toggle();
-    }
+// Función para alternar la visibilidad de la lista de favoritos
+function toggleFavorites() {
+    const favoritesList = document.getElementById('favorites-list');
+    favoritesList.style.display = favoritesList.style.display === 'none' ? 'block' : 'none';
+}
 
-    $(document).on('click', '#open-favorites', function () {
-        toggleFavorites();
-    });
-
+// Agregar evento para cargar los productos de favoritos desde el almacenamiento local cuando se carga la página
+document.addEventListener('DOMContentLoaded', function () {
     getFavoritesFromLocalStorage();
     updateFavoritesUI();
 
-    function addToFavorites(productName, productModel, productImage, productNameDisplay) {
-        const productKey = productName + '-' + productModel;
-        const favoritesList = $('#favorites');
-        const product = $('<li>').addClass('favorite-item').html(`
-            <img src='${productImage}' alt='${productName}'>
-            <span>${productNameDisplay}</span>
-            <button class='remove-from-favorites'>✖️</button>
-        `);
-        favoritesList.append(product);
-        productosAgregados[productKey] = true;
-        saveFavoritesToLocalStorage();
-        $('#favorites-list').show();
-    }
+    // Obtener referencias a la lista de favoritos y al botón de abrir favoritos
+    const openFavoritesButton = document.getElementById('open-favorites');
 
-    $(document).on('click', '.remove-from-favorites', function () {
-        const productItem = $(this).parent();
-        const productName = productItem.find('span').text();
-        const productModel = productItem.find('img').attr('alt');
-        const productKey = productName + '-' + productModel;
-        delete productosAgregados[productKey];
-        productItem.remove();
-        saveFavoritesToLocalStorage();
-        if ($('#favorites-list').children().length === 0) {
-            $('#favorites-list').hide();
-        }
+    // Agregar evento de clic al botón de abrir favoritos
+    openFavoritesButton.addEventListener('click', function () {
+        // Alternar la visibilidad de la lista de favoritos
+        toggleFavorites();
     });
-
-    function updateFavoritesUI() {
-        const favoritesList = $('#favorites');
-        favoritesList.empty();
-        for (const productKey in productosAgregados) {
-            const [productName, productModel] = productKey.split('-');
-            const productImage = ''; // Aquí deberías obtener la URL de la imagen según el nombre y el modelo del producto
-            const productNameDisplay = productName; // Nombre del producto para mostrar
-            const product = $('<li>').addClass('favorite-item').html(`
-                <img src='${productImage}' alt='${productName}'>
-                <span>${productNameDisplay}</span>
-                <button class='remove-from-favorites'>✖️</button>
-            `);
-            favoritesList.append(product);
-        }
-    }
 });
 
+function addToFavorites(productName, productModel, productImage, productNameDisplay) {
+    // Generar una clave única para el producto basada en el nombre y el modelo
+    const productKey = productName + '-' + productModel;
+
+    // Agregar el producto a la lista de favoritos
+    const favoritesList = document.getElementById('favorites');
+    const product = document.createElement('li');
+    product.className = 'favorite-item';
+    product.innerHTML = `
+        <img src='${productImage}' alt='${productName}'>
+        <span>${productNameDisplay}</span>
+        <button class='remove-from-favorites' onclick="removeFromFavorites(this)">✖️</button>
+    `;
+    favoritesList.appendChild(product);
+
+    // Agregar el producto al objeto de productos agregados
+    productosAgregados[productKey] = true;
+
+    // Guardar los productos de favoritos en el almacenamiento local
+    saveFavoritesToLocalStorage();
+
+    // Mostrar la lista de favoritos si no está visible
+    document.getElementById('favorites-list').style.display = 'block';
+}
+
+function removeFromFavorites(button) {
+    const productItem = button.parentNode;
+    const favoritesList = productItem.parentNode;
+    favoritesList.removeChild(productItem);
+
+    // Obtener el nombre y el modelo del producto para eliminarlo del objeto de productos agregados
+    const productName = productItem.querySelector('span').textContent;
+    const productModel = productItem.querySelector('img').alt;
+    const productKey = productName + '-' + productModel;
+
+    // Eliminar el producto del objeto de productos agregados
+    delete productosAgregados[productKey];
+
+    // Guardar los productos de favoritos actualizados en el almacenamiento local
+    saveFavoritesToLocalStorage();
+
+    // Ocultar la lista de favoritos si está vacía
+    if (favoritesList.children.length === 0) {
+        document.getElementById('favorites-list').style.display = 'none';
+    }
+}
+
+// Función para actualizar la interfaz de usuario de la lista de favoritos
+function updateFavoritesUI() {
+    const favoritesList = document.getElementById('favorites');
+    favoritesList.innerHTML = '';
+    for (const productKey in productosAgregados) {
+        const [productName, productModel] = productKey.split('-');
+        const productImage = ''; // Aquí deberías obtener la URL de la imagen según el nombre y el modelo del producto
+        const productNameDisplay = productName; // Nombre del producto para mostrar
+        const product = document.createElement('li');
+        product.className = 'favorite-item';
+        product.innerHTML = `
+            <img src='${productImage}' alt='${productName}'>
+            <span>${productNameDisplay}</span>
+            <button class='remove-from-favorites' onclick="removeFromFavorites(this)">✖️</button>
+        `;
+        favoritesList.appendChild(product);
+    }
+}
 
 
 

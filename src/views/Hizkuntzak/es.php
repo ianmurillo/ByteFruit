@@ -126,6 +126,12 @@ return [
     "cvv" => "CVV:",
     "pago" => "Realizar Pago",
 
+    //datos
+    "NAN" => "DNI:",
+    "izena" => "Nombre:",
+    "korreo" => "Correo:",
+    "kontukorronte" => "Cuenta Corriente:",
+
     // encabezado 
     "hasiera" => "Inicio",
     "gureInfo" => "Nuestra información",

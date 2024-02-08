@@ -38,104 +38,56 @@
 <body>
 
     <div class="container mt-5">
-        <div id="caja" class="row justify-content-center">
-            <div class="col-md-8">
-                <h2 class="mb-4">Datuak:</h2>
+    
+    <center><h2><?= itzuli("hornitzaileak") ?></h2></center>
 
-                <!-- Sección para Tarjeta de Crédito -->
-                <div class="payment-method-section" id="credit-card-section">
-                    <!-- Campos para Tarjeta de Crédito -->
-                    <div class="form-group">
-                        <label for="nan">NAN</label>
-                        <input type="text" class="form-control" id="nan" name="card-holder" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="korreo">Korreo elektronikoa</label>
-                        <input type="text" class="form-control" id="korreo" name="card-number" required data-parsley-pattern="^[0-9]{16}$">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="expiry-date">Kreditu txartela:</label>
-                            <input type="text" class="form-control" id="card-number" name="card-number" required data-parsley-pattern="^[0-9]{16}$">
-                        </div>
-                    </div>
-                </div>
+    <form action="datuak.php" method="post">
+            <label for="NAN"><?= itzuli("NAN") ?></label>
+            <input type="text" name="NAN" required><br><br>
 
-                
+            <label for="izena"><?= itzuli("izena") ?></label>
+            <input type="text" name="izena" required><br><br>
 
-                <!-- Botón de Pago -->
-                <button type="submit" class="btn btn-primary" id="miBoton">Erosketa egin</button>
-            </div>
-        </div>
+            <label for="korreo"><?= itzuli("korreo") ?></label>
+            <input type="text" name="korreo" required><br><br>
+
+            <label for="kontukorronte"><?= itzuli("kontukorronte") ?></label>
+            <input type="text" name="kontukorronte" required><br><br>
+
+            <button type="submit" class="btn btn-primary" id="miBoton">Erosketa egin</button>
+    </form>
     </div>
 
-    <!-- Scripts JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://parsleyjs.org/dist/parsley.min.js"></script>
+<?php
 
-    <!-- Script Personalizado -->
-    <script>
-        $(document).ready(function () {
-            // Mostrar la sección de tarjeta de crédito al cargar la página
-            $('#credit-card-section').show();
-
-            // Manejo del cambio en la selección del método de pago
-            $('#payment-method').change(function () {
-                // Oculta todas las secciones
-                $('.payment-method-section').hide();
-                // Muestra la sección correspondiente al método seleccionado
-                $('#' + $(this).val() + '-section').show();
-            });
-
-            // Inicialización de Parsley para validación del formulario
-            $('#payment-form').parsley();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    require_once("../../require/functions.php");
             
-            // Manejo del envío del formulario
-            $('#payment-form').submit(function (event) {
-                event.preventDefault();
-                if ($('#payment-form').parsley().isValid()) {
-                    // Aquí puedes realizar acciones de procesamiento del pago
-                    alert('¡Pago exitoso! (Este mensaje es solo un ejemplo)');
-                }
-            });
-        });
-    </script>
-    <script>
-    function realizarCompra() {
-        var formData = {
-            nan: $("#nan").val(),
-            email: $("#korreo").val(),
-            metodoPago: $("#metodoPago").val()
-        };
+    $conn = null;
+    $conn = connect($conn);
 
-        // Enviar datos del formulario en formato JSON mediante AJAX
-        $.ajax({
-                type: "POST",
-                url: "procesar_formulario.php",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify(formData)
-            })
-            .done(function(response) {
-                // Manejar la respuesta del servidor    
+    $NAN = $_POST["NAN"];
+    $izena = $_POST["izena"];
+    $korreo = $_POST["korreo"];
 
-                var boton = document.getElementById('miBoton');
+    $sql = "INSERT INTO eroslea (NAN, izena, korreo) VALUES (?, ?, ?)";
 
-                // Agrega un escuchador de eventos al botón
-                boton.addEventListener('click', function() {
-                // Redirige a la página deseada
-                window.location.href = 'ordainketa.php';
-                });
-            })
-            .fail(function() {
-                // Manejar errores
-                alert("Error en la solicitud AJAX");
-            })
-            .always(function() {});
-    }
-    </script>
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sss", $NAN, $izena, $korreo);
+
+    $stmt->execute();
+    
+    $stmt->close();
+    $conn->close();
+
+    header("Location: ordainketa.php");
+    exit(); 
+}
+?>
+
+<?php
+require_once("../../require/footer.php");
+?>
 
     <script src="../../js/main.js"></script>
 
