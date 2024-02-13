@@ -39,7 +39,7 @@
 
     <div class="container mt-5">
     
-    <center><h2><?= itzuli("hornitzaileak") ?></h2></center>
+    <center><h2><?= itzuli("eroslea") ?></h2></center>
 
     <form action="datuak.php" method="post">
             <label for="NAN"><?= itzuli("NAN") ?></label>

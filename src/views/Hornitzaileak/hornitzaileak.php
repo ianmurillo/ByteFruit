@@ -26,7 +26,7 @@
             <label for="helbidea"><?= itzuli("helb") ?></label>
             <input type="text" name="Helbidea" required><br><br>
 
-            <label for="eskaintza"><?= itzuli("zerbiztua") ?></label>
+            <label for="eskaintza"><?= itzuli("zerbitzua") ?></label>
             <input type="text" name="Zerbitzua" required><br><br>
 
             <input type="submit" value="Gorde hornitzailea">

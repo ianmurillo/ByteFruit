@@ -131,6 +131,7 @@ return [
     "izena" => "Nombre:",
     "korreo" => "Correo:",
     "kontukorronte" => "Cuenta Corriente:",
+    "eroslea" => "Formulario de comprador",
 
     // encabezado 
     "hasiera" => "Inicio",

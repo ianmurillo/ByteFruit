@@ -104,7 +104,7 @@ return [
     "notizi29desk" => "How Artificial Intelligence is used for improvement and diagnostics in the health sector is explained.",
     "notizi30" => "Virtual Reality and Augmented Reality for the Future",
     "notizi30desk" => "Virtual reality and augmented reality technologies promise an exciting future.",
-    "aukeraHizkuntza" => "es",
+    "aukeraHizkuntza" => "en",
     
     // supplier form
     "hornitzaileak" => "Supplier Form",
@@ -131,6 +131,7 @@ return [
     "izena" => "Name:",
     "korreo" => "Email:",
     "kontukorronte" => "Bank Account:",
+    "eroslea" => "Buyer form",
 
     // header 
     "hasiera" => "Home",

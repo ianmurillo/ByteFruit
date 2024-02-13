@@ -132,6 +132,7 @@ return[
     "izena" => "Izena:",
     "korreo" => "Korreoa:",
     "kontukorronte" => "Kontu Korrontea:",
+    "eroslea" => "Eroslearen formularioa",
 
     //header 
     "hasiera" => "Hasiera",
